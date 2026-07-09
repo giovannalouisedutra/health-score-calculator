@@ -51,7 +51,7 @@ def calcular_health_score(
     engajamento = pontuar_engajamento(interacoes_90_dias)
     nps_norm = normalizar_nps(nps)
 
-score = adocao * 0.4 + engajamento * 0.4 + nps_norm * 0.2
+    score = adocao * 0.4 + engajamento * 0.4 + nps_norm * 0.2
 
     if score >= 75:
         status = "🟢 Saudável"
