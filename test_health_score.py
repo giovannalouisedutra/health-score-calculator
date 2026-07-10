@@ -56,12 +56,12 @@ def test_cliente_em_risco():
     assert "Risco" in resultado["status"]
 
 def test_tickets_zero_e_nota_maxima():
-       assert pontuar_tickets(0) == 100.0
+    assert pontuar_tickets(0) == 100.0
 
 
-   def test_tickets_moderados():
-       assert pontuar_tickets(5) == 50.0
+def test_tickets_moderados():
+    assert pontuar_tickets(5) == 50.0
 
 
-   def test_muitos_tickets_e_nota_zero():
-       assert pontuar_tickets(15) == 0.0
+def test_muitos_tickets_e_nota_zero():
+    assert pontuar_tickets(15) == 0.0
