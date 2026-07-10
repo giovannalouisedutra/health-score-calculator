@@ -35,6 +35,18 @@ def normalizar_nps(nps: int) -> float:
     nps = max(-100, min(100, nps))
     return (nps + 100) / 2
 
+def pontuar_tickets(tickets_abertos: int) -> float:
+       """Converte tickets de suporte abertos em nota 0-100.
+
+       0 tickets  -> 100 pontos (sem fricção)
+       10+ tickets -> 0 pontos (muita fricção!)
+       """
+       if tickets_abertos <= 0:
+           return 100.0
+       if tickets_abertos >= 10:
+           return 0.0
+       return 100.0 - (tickets_abertos * 10)
+
 
 def calcular_health_score(
     licencas_usadas: int,
