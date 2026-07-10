@@ -11,6 +11,7 @@ from health_score import (
     calcular_health_score,
     normalizar_nps,
     pontuar_engajamento,
+    pontuar_tickets,
 )
 
 
@@ -53,3 +54,14 @@ def test_cliente_em_risco():
     resultado = calcular_health_score(30, 150, 0, -20)
     assert resultado["score"] < 50
     assert "Risco" in resultado["status"]
+
+def test_tickets_zero_e_nota_maxima():
+    assert pontuar_tickets(0) == 100.0
+
+
+def test_tickets_moderados():
+    assert pontuar_tickets(5) == 50.0
+
+
+def test_muitos_tickets_e_nota_zero():
+    assert pontuar_tickets(15) == 0.0
